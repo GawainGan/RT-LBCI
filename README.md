@@ -11,7 +11,7 @@ Real-time Local Business Condition Index
 - retail prices for gasoline: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000101
 - Consumer Price Index: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810000401
 - housing completions: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3410014301
-- ew housing price index: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
+- new housing price index: https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1810020501
 
 
 Shared Google Drive: https://drive.google.com/drive/folders/1_cJHkxYjyn3lxr-oL2XXr68xG8jFvRW8?usp=share_link
