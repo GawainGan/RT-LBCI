@@ -1,0 +1,48 @@
+﻿"Electric power generation, monthly generation by type of electricity 1 2"
+"Frequency: Monthly"
+"Table: 25-10-0015-01 (formerly CANSIM 127-0002)"
+"Release date: 2023-04-12"
+"Geography: Canada, Province or territory"
+""
+""
+
+"Geography","Canada",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Class of electricity producer","Total all classes of electricity producer",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Type of electricity generation","August 2020","September 2020","October 2020","November 2020","December 2020","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021","January 2022","February 2022","March 2022","April 2022","May 2022","June 2022","July 2022","August 2022","September 2022","October 2022","November 2022","December 2022","January 2023"
+,"Megawatt hours",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Total all types of electricity generation","51,097,936","45,688,072","49,847,235","53,288,969","61,263,200","61,728,305","57,162,090","56,656,641","48,555,490","48,110,215","48,939,953","49,931,674","50,332,611","45,812,955","48,242,405","51,705,069","60,476,265","65,051,614","56,206,968","56,654,463","50,183,519","47,824,561","47,600,642","51,851,536","53,761,764","47,568,839","48,092,344","53,565,545","61,888,525","62,479,092"
+"Hydraulic turbine 3","29,650,683","26,196,074","29,509,348","31,469,519","38,446,618","40,069,727","36,419,571","35,436,325","29,815,313","28,994,724","28,142,017","29,336,929","28,175,532","25,608,634","27,616,522","30,222,153","37,149,884","40,173,546","34,904,599","35,366,406","31,124,478","29,738,161","29,455,711","31,177,059","32,250,510","27,896,850","28,800,553","32,710,075","38,791,461","39,567,888"
+"Conventional steam turbine 4","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..",".."
+"Nuclear steam turbine 5","8,198,305","6,702,473","6,955,185","7,164,213","7,324,378","7,637,191","6,103,830","6,604,135","6,914,849","7,556,304","7,907,235","8,216,039","8,070,667","7,628,494","6,988,918","6,436,475","7,312,113","8,095,449","7,007,227","7,049,681","6,681,505","5,879,264","6,859,574","7,442,104","8,013,088","7,127,004","5,491,173","6,154,379","6,500,567","7,487,846"
+"Internal combustion turbine 6","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..",".."
+"Combustion turbine 7","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..","..",".."
+"Total electricity production from combustible fuels 8","10,606,857","9,611,762","10,117,950","10,412,961","11,381,491","10,922,644","11,359,111","9,931,214","8,537,347","8,625,194","9,935,789","10,139,576","11,777,839","9,390,452","10,499,940","10,948,848","12,135,309","12,703,795","10,393,167","10,216,725","8,636,662","8,883,741","8,347,522","10,375,913","11,087,265","9,729,293","9,953,725","10,258,486","12,599,248","11,910,073"
+"Tidal power turbine 9","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0","0"
+"Wind power turbine 10","2,338,958","2,901,225","3,086,338","4,089,494","4,021,877","2,993,648","3,125,903","4,401,310","2,980,870","2,592,924","2,643,825","1,949,930","1,991,364","2,866,926","2,924,887","3,921,195","3,787,692","3,957,553","3,748,666","3,788,520","3,444,712","2,968,532","2,575,906","2,444,754","2,052,649","2,469,762","3,512,346","4,237,090","3,863,316","3,371,475"
+"Solar 11","296,726","269,821","171,538","139,945","74,015","88,504","142,385","265,253","291,710","329,173","300,645","281,873","302,749","304,228","196,934","159,670","76,995","105,072","141,252","221,128","289,149","348,979","357,144","404,772","351,149","340,774","323,549","187,358","118,702","132,857"
+"Other types of electricity generation","6,407","6,717","6,876","12,837","14,821","16,591","11,290","18,404","15,401","11,896","10,442","7,327","14,460","14,221","15,204","16,728","14,272","16,199","12,057","12,303","7,013","5,884","4,785","6,934","7,103","5,156","10,998","18,157","15,231","8,953"
+
+Symbol legend:
+.., not available for a specific reference period
+
+
+
+
+Footnotes:
+1,"For monthly data prior to January 2008, please see table 25-10-0001-01 (terminated). For current monthly data on Electric power receipts and deliveries, see table 25-10-0016-01."
+2,"The target population for the Monthly Electricity Supply and Disposition Survey has been expanded to improve coverage of renewable energy in Canada, particularly wind and solar power. As a result of this change, users will have to use caution when comparing data for historical purposes. For wind power, significant changes occurred in British Columbia, Alberta, Ontario, Quebec and Prince Edward Island. For solar power, significant changes occurred in Ontario."
+3,"Electric power generated from a plant in which the turbine generators are driven by flowing water. Prior to January 2008, hydro included wind and tidal generation. From January 2008 on, wind and tidal generation are reported separately."
+4,"A power plant in which the prime mover is a steam turbine. The steam used to drive the turbine is produced in a boiler where fossil fuels or other combustible materials are burned. From January 2016 on, this generation is reported as part of combustible fuel generation."
+5,"Electricity generated at an electric power plant whose turbines are driven by steam generated in a reactor by heat from the fission of nuclear fuel."
+6,"A power plant in which the prime mover is an internal combustion turbine. Electric power is generated by converting energy obtained by the rapid burning of a fuel-air mixture into mechanical energy. From January 2016 on, this generation is reported as part of combustible fuel generation."
+7,"A power plant in which the prime mover is a combustion turbine. Electric power is generated by converting energy obtained by burning fuel into mechanical energy. From January 2016 on, this generation is reported as part of combustible fuel generation."
+8,"Total combustible generation includes non-renewable combustible fuels (coal, natural gas, petroleum and other non-renewable combustible fuels) and biomass (wood, spent pulping liquor, methane, municipal waste, other waste and other types of biomass). 
+"
+9,"Electric power generated from a plant in which the turbine generators are driven by moving water from tidal flows."
+10,"A power plant in which the prime mover is a wind turbine. Electric power is generated by the conversion of wind power into mechanical energy."
+11,"Electricity created by converting solar radiation through photovoltaic processes or transforming solar radiation captured by concentrating thermal systems."
+
+
+
+"How to cite: Statistics Canada. Table 25-10-0015-01  Electric power generation, monthly generation by type of electricity"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2510001501

@@ -1,0 +1,48 @@
+﻿"Experimental estimates for business openings and closures for Canada, provinces and territories, census metropolitan areas, seasonally adjusted c 1 2"
+"Frequency: Monthly"
+"Table: 33-10-0270-01"
+"Release date: 2023-04-25"
+"Geography: Canada, Province or territory, Census metropolitan area"
+""
+""
+
+"Geography","Halifax, Nova Scotia ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Industry","Business sector industries [T004]",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Business dynamics measure","August 2020","September 2020","October 2020","November 2020","December 2020","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021","January 2022","February 2022","March 2022","April 2022","May 2022","June 2022","July 2022","August 2022","September 2022","October 2022","November 2022","December 2022","January 2023"
+,"Number",,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Active businesses 3","9,334","9,488","9,566","9,629","9,724","9,815","9,867","9,915","9,909","9,866","9,908","9,955","10,002","9,979","10,017","10,074","10,093","10,501E","10,485","10,573","10,633","10,647","10,695","10,709","10,701","10,722","10,723","10,737","10,758","10,815"
+"Opening businesses 4","472E","454","434","455","438","440","425","401","382","350","394","396","392","333","418","412","414","819E","429","460","455","412","380","490","408","426","424","418","428","395"
+"Continuing businesses 5","8,870","9,017","9,172","9,215","9,294","9,394","9,455","9,515","9,507","9,502","9,451","9,577","9,598","9,640","9,632","9,685","9,685","9,688","10,056E","10,090","10,155","10,218","10,282","10,252","10,287","10,288","10,336","10,345","10,338","10,458"
+"Closing businesses","302","306","303","380","321","337","352","353","392","394","382","304","363","378","372","369","395","397","426","390","396","399","331","432","440","430","423","414","408","329"
+"Reopening businesses 6","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"
+"Entrants 7","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x"
+"Temporary closures 8","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","..","..","..","..","..",".."
+"Exits 9","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","x","..","..","..","..","..",".."
+
+Symbol legend:
+.., not available for a specific reference period
+x, suppressed to meet the confidentiality requirements of the Statistics Act
+E, use with caution
+
+
+"Table Corrections:"
+Date,Note
+"2022-01-07","On January 07, 2022 the data for Temporary closures have been corrected."
+
+
+
+Footnotes:
+1,"Fluctuations in economic time series are caused by seasonal, cyclical and irregular movements. A seasonally adjusted series is one from which seasonal movements have been eliminated."
+2,"The statistical unit of measures used is the business establishment, which represents a unit of production, such as a factory, store, or head office. By comparison, an enterprise may have many establishments that might operate in different regions and industries. The business counts used for this table are based on establishments within firms to which payroll/employment can be associated in the Survey of Employment Payroll and Hours (SEPH). Establishment refers to the level in the statistical hierarchy of the Business Register at which the accounting data required to measure production are available (principal inputs, revenues, salaries and wages). The establishment is defined as the most homogeneous unit of production for which the business maintains accounting records. From these records, it is possible to assemble all the data elements required to compile the gross value of production (total sales or shipments, and inventories), the cost of materials and services, and labour and capital used in production. For more details, please see: <a href="https://www23.statcan.gc.ca/imdb/p3Var.pl?Function=Unit&Id=23893" rel="external noopener noreferrer" target="_blank">Establishment (opens new window)</a>."
+3,"Active businesses are those businesses that reported having one or more employees in a given month."
+4,"Opening businesses are businesses that transition from having no employees in the previous month to having at least one employee in the current month. These instances occur when a new, small firm begins, when a large firm opens a new establishment or when a seasonal firm re-opens."
+5,"Continuing businesses are businesses that have at least one employee in the previous month and at least one employee in the current month."
+6,"Reopening businesses are defined as opening businesses that were also active in a previous month."
+7,"Entrants are businesses with employment in the current month that were not active in any previous month in the current or previous year."
+8,"A temporary business closure is the difference between closures and exits."
+9,"The definition of exits is based on the Longitudinal Employment Analysis Program (LEAP) annual exits. Because the LEAP definition can require up to 24 months of data to be counted as an exit, projections of exits using predicted growth rates are implemented using a regression model of exits on closures of more than 6 months. As a result, there are no published exits in the last six months."
+
+
+
+"How to cite: Statistics Canada. Table 33-10-0270-01  Experimental estimates for business openings and closures for Canada, provinces and territories, census metropolitan areas, seasonally adjusted"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310027001
