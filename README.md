@@ -1,4 +1,4 @@
-# Data Sources:
+# Rejected data sets:
 
 - Business Dynamics measures, by industry (By Province): 
   - Annual
@@ -35,5 +35,17 @@
 - Unemployment rate, participation rate, and employment rate by type of student during school months, monthly, unadjusted for seasonality (By Province)
   - Monthly
   - https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410002101
+  
+ # New proposed data sets (All by CMA):
+ 
+ - Experimental estimates for business openings and closures (Dataset 1)
+   - https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=3310027001
+   
+- Labour force characteristics (Employment), three-month moving average (Dataset 2)
+  - https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037901
+  
+- Labour force characteristics (Population), three-month moving average (Dataset 3)
+  - https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037801
 
 Shared Google Drive: https://drive.google.com/drive/folders/1_cJHkxYjyn3lxr-oL2XXr68xG8jFvRW8?usp=share_link
+
