@@ -46,6 +46,12 @@
   
 - Labour force characteristics (Population), three-month moving average (Dataset 3)
   - https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=1410037801
+  
+- Selected police-reported crime and calls for service during the COVID-19 pandemic (Open)
+  - https://open.canada.ca/data/en/dataset/2a265a73-6277-4c2a-a5d0-f0ebfc00f0cf
+  
+- Historical (real-time) releases of monthly retail trade, sales x 1,000 (Dataset 4)
+  - https://www150.statcan.gc.ca/t1/tbl1/en/cv.action?pid=2010008101
 
 Shared Google Drive: https://drive.google.com/drive/folders/1_cJHkxYjyn3lxr-oL2XXr68xG8jFvRW8?usp=share_link
 
