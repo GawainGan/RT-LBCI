@@ -11,7 +11,7 @@ library(tidyverse)
 # Read in data: row: city, column: date
 
 #getwd()
-#setwd('DATA 599 Capstone/RT-LBCI')
+setwd('DATA 599 Capstone/RT-LBCI')
 
 data <- read_csv('RTLBCI/RTLBCI_Cleaned_To_2023-04-28.csv')
 
@@ -171,6 +171,11 @@ ggplot() +
   theme(legend.title = element_blank())
 ```
 ```{r}
-write_csv(df_gas, "regular_gasoline_retail_price.csv")
-write_csv(df_diesel, "diesel_retail_price.csv")
+#write_csv(df_gas, "regular_gasoline_retail_price.csv")
+#write_csv(df_diesel, "diesel_retail_price.csv")
+write_csv(df_cpi, "CPI_all_items.csv")
+```
+```{r}
+# Check correlation
+
 ```
