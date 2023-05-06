@@ -1,0 +1,181 @@
+---
+title: "R Notebook"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+# Read in data: row: city, column: date
+
+#getwd()
+setwd('DATA 599 Capstone/RT-LBCI')
+
+data <- read_csv('RTLBCI/RTLBCI_Cleaned_To_2023-04-28.csv')
+
+date_cols <- colnames(data)[2:ncol(data)] # Get the column names of the date columns
+data[date_cols] <- lapply(data[date_cols], as.character) # Convert all date columns to character
+
+data_long <- data %>%
+  pivot_longer(cols = -1,   # Select all columns except the first one
+               names_to = "Date",   # Name the new 'Date' column
+               values_to = "Value") # Name the new 'Value' column
+
+data_wide <- data_long %>%
+
+  # Fill the new city columns with the 'Value' column
+  pivot_wider(names_from = City_Provience,
+              values_from = Value)
+
+# Adjust the format according to your date format
+data_wide$Date <- as.Date(data_wide$Date, format = "%B %d, %Y")
+
+data_wide <- data_wide %>%
+  mutate_at(vars(-1), as.numeric)
+
+# write_csv(data_wide, "RTLBCI_reshaped_data.csv")
+
+# Rename data_wide to data
+data <- data_wide
+
+data
+```
+```{r}
+
+```
+```{r}
+# DATA: row: date, column: city
+
+# read in data
+df <- read_csv('RTLBCI/RTLBCI_row_date.csv')
+
+df$Geography <- as.Date(df$Geography, format = "%d-%b-%y")
+
+# Rename Geography to Date
+colnames(df)[1] <- "Date"
+
+df
+```
+```{r}
+# Gas retail prices
+
+# read in data
+df_gas <- read_csv('other_datasets/gas_retail_price.csv')
+df_gas$Geography <- paste0("01-", df_gas$Geography)
+df_gas$Geography <- as.Date(df_gas$Geography, format = "%d-%b-%y")
+colnames(df_gas)[1] <- "Date"
+
+
+df_gas
+```
+```{r}
+# Diesel retail prices
+
+# read in data
+df_diesel <- read_csv('other_datasets/diesel_retail_price.csv')
+df_diesel$Geography <- paste0("01-", df_diesel$Geography)
+df_diesel$Geography <- as.Date(df_diesel$Geography, format = "%d-%b-%y")
+colnames(df_diesel)[1] <- "Date"
+```
+```{r}
+# CPI all items
+
+# read in data
+df_cpi <- read_csv('other_datasets/CPI_all_items.csv')
+df_cpi$Geography <- paste0("01-", df_cpi$Geography)
+df_cpi$Geography <- as.Date(df_cpi$Geography, format = "%d-%b-%y")
+colnames(df_cpi)[1] <- "Date"
+
+df_cpi <- df_cpi %>%
+  mutate_at(vars(-1), as.numeric)
+
+df_cpi <- na.omit(df_cpi)
+df_cpi
+```
+```{r}
+# Housing completions
+
+# read in data
+df_housing <- read_csv('other_datasets/housing_completion_van.csv')
+df_housing$`Type of unit` <- paste0("01-", df_housing$`Type of unit`)
+df_housing$`Type of unit` <- as.Date(df_housing$`Type of unit`, format = "%d-%b-%y")
+colnames(df_housing)[1] <- "Date"
+
+df_housing
+```
+```{r}
+# New housing price index
+
+# read in data
+df_housing_price <- read_csv('other_datasets/New housing price index_van.csv')
+
+df_housing_price$`New housing price indexes` <- paste0("01-", df_housing_price$`New housing price indexes`)
+df_housing_price$`New housing price indexes` <- as.Date(df_housing_price$`New housing price indexes`, format = "%d-%b-%y")
+colnames(df_housing_price)[1] <- "Date"
+
+df_housing_price <- na.omit(df_housing_price)
+df_housing_price
+
+```
+```{r}
+# Visualize the data
+
+# RTLBCI
+#colnames(data)
+
+# Rename the column names
+#colnames(data)
+colnames(data)[30] <- "Vancouver"
+
+#colnames(df_gas)
+colnames(df_gas)[17] <- "Vancouver"
+
+#colnames(df_cpi)
+colnames(df_cpi)[13] <- "Vancouver"
+
+#colnames(df_housing)
+colnames(df_housing)[2] <- "Vancouver"
+
+#colnames(df_housing_price)
+colnames(df_housing_price)[2] <- "Vancouver"
+
+#colnames(df_diesel)
+colnames(df_diesel)[17] <- "Vancouver"
+
+
+
+ggplot() +
+  geom_line(data = data, aes(x = Date, y = Vancouver, color = "RTLBCI")) +
+  geom_line(data = df_gas, aes(x = Date, y = Vancouver, color = "Gas")) +
+  geom_line(data = df_cpi, aes(x = Date, y = Vancouver, color = "CPI")) +
+  geom_line(data = df_housing_price, aes(x = Date, y = Vancouver, color = "Housing Price")) +
+    geom_line(data = df_diesel, aes(x = Date, y = Vancouver, color = "Diesel")) +
+  labs(title = "Comarison",
+       x = "Date",
+       y = "Value") +
+  theme(legend.title = element_blank())
+
+
+
+ggplot() +
+  geom_line(data = data, aes(x = Date, y = Vancouver, color = "RTLBCI")) +
+  geom_line(data = df_gas, aes(x = Date, y = Vancouver, color = "Gas")) +
+  geom_line(data = df_cpi, aes(x = Date, y = Vancouver, color = "CPI")) +
+  geom_line(data = df_housing_price, aes(x = Date, y = Vancouver, color = "Housing Price")) +
+  geom_line(data = df_housing, aes(x = Date, y = Vancouver, color = "housing completiion")) +
+  labs(title = "Comarison",
+       x = "Date",
+       y = "Value") +
+  theme(legend.title = element_blank())
+```
+```{r}
+#write_csv(df_gas, "regular_gasoline_retail_price.csv")
+#write_csv(df_diesel, "diesel_retail_price.csv")
+write_csv(df_cpi, "CPI_all_items.csv")
+```
+```{r}
+# Check correlation
+
+```
