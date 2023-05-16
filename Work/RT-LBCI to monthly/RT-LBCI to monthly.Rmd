@@ -1,0 +1,85 @@
+---
+title: "Weekly RT-LBCI to Monthly"
+author: "Vimaljeet Singh"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lubridate)
+rm(list = ls()) # clear objects in workspace each time I do 'Run all' using Ctrl+Alt+R
+```
+
+# Load the file with raw RT-LBCI values for all cities
+
+```{r}
+# load the file with raw RT-LBCI values
+index <- read.csv("RT-LBCI.csv")
+
+# Converting to date type
+index$Date <- as.Date(index$Date)
+
+# Extracting year and and month
+index$Year <- year(index$Date)
+index$Month <- month(index$Date)
+
+head(index)
+```
+
+# Required functions
+
+* Function 1 works on the output of the first function and aggregates the lagged values by calculating the mean value by grouping them by year then month  in 'cities' and rounds the mean values to 2 decimal places.
+
+* Function 2 creates a date column by clubbing the month and year columns and making the date to be the first day of that month and drops the year and month column in the input df (which is the output from function 1)
+
+```{r}
+# Function 1
+aggregate_lagged_values <- function(data) {
+  cities = c("Montreal", "Ottawa", "Toronto", "Calgary", "Vancouver")
+  result <- data %>%
+    group_by(Year, Month) %>%
+    summarize(across(all_of(cities), ~ round(mean(., na.rm = TRUE), 2)))
+  
+  result <- as.data.frame(result)  # Convert to data frame
+  
+  return(result)
+}
+
+# Function 2
+add_date <- function(data) {
+  # Convert Year and Month columns to numeric if they are stored as characters
+  data$Year <- as.numeric(data$Year)
+  data$Month <- as.numeric(data$Month)
+  
+  # Create a new Date column using the Year and Month values
+  data$Date <- as.Date(paste(data$Year, data$Month, "01", sep = "-"))
+  
+  # Move the Date column to the first position
+  data <- data[, c("Date", names(data)[-which(names(data) %in% c("Year", "Month"))])]
+  
+  # Remove the duplicate Date column
+  data <- data[, -which(names(data) == "Date.1")]
+  
+  return(data)
+}
+```
+
+# Aggregate the values to monthly from weekly
+
+```{r}
+aggregated_by_month <- add_date(aggregate_lagged_values(index))
+head(aggregated_by_month)
+```
+
+# Save as CSV
+
+```{r}
+# uncomment the code to run
+# Change the file path if you want to save the dataframes as csv in your machine
+# write.csv(aggregated_by_month, "RT-LBCI_Monthly.csv", row.names = FALSE)
+```
+

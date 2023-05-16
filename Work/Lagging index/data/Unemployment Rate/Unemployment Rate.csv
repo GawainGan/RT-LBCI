@@ -1,0 +1,32 @@
+﻿"Labour force characteristics, three-month moving average, unadjusted for seasonality, last 5 months 1"
+"Frequency: Monthly"
+"Table: 14-10-0387-01"
+"Release date: 2023-05-05"
+"Geography: Canada, Province or territory, Economic region"
+""
+""
+
+"Labour force characteristics","Unemployment rate 4",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Statistics","Estimate",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Geography 2 3","August 2020","September 2020","October 2020","November 2020","December 2020","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021","January 2022","February 2022","March 2022","April 2022","May 2022","June 2022","July 2022","August 2022","September 2022","October 2022","November 2022","December 2022","January 2023","February 2023","March 2023","April 2023"
+,"Percentage",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Halifax, Nova Scotia","10.5","8.7","7.7","6.3","7.0","7.5","8.5","8.8","8.6","9.4","9.0","8.7","7.4","6.8","6.1","5.7","5.5","5.7","5.6","5.7","5.1","4.7","4.3","4.8","5.4","5.3","5.3","4.6","4.6","4.2","4.6","4.8","5.1"
+"Montréal, Quebec","14.8","13.1","11.1","9.1","8.3","8.7","8.6","9.4","9.2","9.4","9.0","9.4","9.2","8.6","7.4","6.3","6.1","6.0","6.2","6.1","5.7","5.6","5.7","5.9","6.5","6.4","6.0","5.1","4.7","5.2","5.7","6.0","5.9"
+"Ottawa, Ontario","9.7","8.5","7.6","6.4","6.3","6.5","6.3","6.4","6.3","7.4","7.7","7.6","7.2","6.5","5.9","4.6","4.3","4.8","5.0","5.2","4.7","4.5","4.2","4.3","4.5","4.5","4.1","3.7","3.5","3.5","3.8","4.1","4.3"
+"Toronto, Ontario","14.3","13.2","11.5","10.1","9.9","10.6","10.9","10.4","9.7","9.9","10.3","10.3","9.9","9.3","8.5","7.3","6.7","7.2","7.1","7.0","6.2","6.2","6.2","6.3","6.5","6.5","6.5","6.0","5.5","5.3","5.2","5.5","5.3"
+"Calgary, Alberta","14.2","12.8","11.7","10.8","10.1","10.4","10.7","10.8","10.0","9.1","9.1","9.4","9.6","8.7","7.9","7.5","7.4","7.6","7.4","7.5","7.0","6.4","5.4","5.1","5.4","5.6","5.7","5.5","5.7","6.4","6.7","7.0","6.4"
+"Vancouver Island and Coast, British Columbia","10.5","9.7","8.7","7.7","7.5","7.4","7.3","7.5","7.2","6.7","5.8","5.2","5.4","5.4","5.3","4.7","4.9","5.1","5.1","4.9","4.7","4.3","4.0","3.8","4.3","4.3","4.1","3.3","3.0","2.9","3.4","3.6","4.1"
+
+
+
+
+Footnotes:
+1,"To ensure respondent confidentiality, estimates below a certain threshold are suppressed. For Canada, Quebec, Ontario, Alberta and British Columbia suppression is applied to all data below 1,500. The threshold level for Newfoundland and Labrador, Nova Scotia, New Brunswick, Manitoba and Saskatchewan is 500, while in Prince Edward Island, estimates under 200 are supressed. For census metropolitan areas (CMAs) and economic regions (ERs), use their respective provincial suppression levels mentioned above. Estimates are based on smaller sample sizes the more detailed the table becomes, which could result in lower data quality."
+2,"An economic region is a geographical unit generally composed of several census divisions within a province. While 73 regions are defined for the purposes of sampling, some areas are too small to enable production of independent estimates from the survey. These small regions are grouped with a neighbouring region with similar economic characteristics. In the case of Prince Edward Island, the province constitutes one economic region. For geographic descriptions of economic regions, refer to the Guide to the Labour Force Survey (catalogue number 71-543-GIE)."
+3,"Excluding the territories."
+4,"The unemployment rate is the number of unemployed persons expressed as a percentage of the labour force. The unemployment rate for a particular group (age, sex, marital status, etc.) is the number unemployed in that group expressed as a percentage of the labour force for that group. Estimates are percentages, rounded to the nearest tenth."
+
+
+
+"How to cite: Statistics Canada. Table 14-10-0387-01  Labour force characteristics, three-month moving average, unadjusted for seasonality, last 5 months"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410038701

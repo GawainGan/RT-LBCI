@@ -1,0 +1,200 @@
+---
+title: "Work1"
+author: "Vimaljeet Singh"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lubridate)
+```
+
+```{r}
+index <- read.csv("data/RT-LBCI.csv")
+
+# Converting to date type
+index$Date <- as.Date(index$Date)
+
+# Extracting year and and month
+index$Year <- year(index$Date)
+index$Month <- month(index$Date)
+
+head(index)
+```
+
+```{r}
+# Lag 1 week
+week1_lag <- index %>%
+    arrange(Year, Month) %>%
+    mutate(
+    Lagged_1week_Montreal = lag(Montreal,1),
+    Lagged_1week_Ottawa = lag(Ottawa,1),
+    Lagged_1week_Toronto = lag(Toronto,1),
+    Lagged_1week_Calgary = lag(Calgary,1),
+    Lagged_1week_Vancouver = lag(Vancouver,1)
+  ) %>%
+  select(Date, starts_with("Lagged_1"))
+
+# Lag 2 week
+week2_lag <- index %>%
+  arrange(Year, Month) %>%
+  mutate(
+    Lagged_2week_Montreal = lag(Montreal,2),
+    Lagged_2week_Ottawa = lag(Ottawa,2),
+    Lagged_2week_Toronto = lag(Toronto,2),
+    Lagged_2week_Calgary = lag(Calgary,2),
+    Lagged_2week_Vancouver = lag(Vancouver,2)
+  ) %>%
+  select(Date, starts_with("Lagged_2"))
+
+# Lag 3 week
+week3_lag <- index %>%
+  arrange(Year, Month) %>%
+  mutate(
+    Lagged_3week_Montreal = lag(Montreal,3),
+    Lagged_3week_Ottawa = lag(Ottawa,3),
+    Lagged_3week_Toronto = lag(Toronto,3),
+    Lagged_3week_Calgary = lag(Calgary,3),
+    Lagged_3week_Vancouver = lag(Vancouver,3)
+  ) %>%
+  select(Date, starts_with("Lagged_3"))
+
+# Lag 4 week
+week4_lag <- index %>%
+  arrange(Year, Month) %>%
+  mutate(
+    Lagged_4week_Montreal = lag(Montreal,4),
+    Lagged_4week_Ottawa = lag(Ottawa,4),
+    Lagged_4week_Toronto = lag(Toronto,4),
+    Lagged_4week_Calgary = lag(Calgary,4),
+    Lagged_4week_Vancouver = lag(Vancouver,4)
+  ) %>%
+  select(Date, starts_with("Lagged_4"))
+
+# removing NAs
+week1_lag <- na.omit(week1_lag)
+week2_lag <- na.omit(week2_lag)
+week3_lag <- na.omit(week3_lag)
+week4_lag <- na.omit(week4_lag)
+
+# reset dataframe index to start at 1
+row.names(week1_lag) <- NULL
+row.names(week2_lag) <- NULL
+row.names(week3_lag) <- NULL
+row.names(week4_lag) <- NULL
+```
+
+
+```{r}
+# function to create lag
+create_lag <- function(data, n) {
+  lagged_df <- data %>%
+    arrange(Year, Month) %>%
+    mutate(
+      across(-Date, ~lag(., n), .names = "Lagged_{n}week_{.col}")
+    ) %>%
+    select(Date, starts_with(paste0("Lagged_", n)))
+  
+  lagged_df <- na.omit(lagged_df)
+  row.names(lagged_df) <- NULL
+  
+  lagged_df$Year <- year(lagged_df$Date)
+  lagged_df$Month <- month(lagged_df$Date)
+  
+  return(lagged_df)
+}
+
+
+# Lag 1 week
+week1lag <- create_lag(index, 1)
+
+# Lag 2 weeks
+week2lag <- create_lag(index, 2)
+
+# Lag 3 weeks
+week3lag <- create_lag(index, 3)
+
+# Lag 4 weeks
+week4lag <- create_lag(index, 4)
+```
+
+```{r}
+head(week4lag)
+```
+
+
+```{r}
+# function to create lag
+create_lagg <- function(data, n) {
+  lagged_df <- data %>%
+    arrange(Year, Month) %>%
+    mutate(
+      across(-Date, ~lag(., n))
+    ) 
+  
+  lagged_df <- na.omit(lagged_df)
+  row.names(lagged_df) <- NULL
+  
+  lagged_df$Year <- year(lagged_df$Date)
+  lagged_df$Month <- month(lagged_df$Date)
+  
+  return(lagged_df)
+}
+
+# function to aggregate the lagged values  in cities by grouping them by year then month
+# round the mean values to 2 decimal places 
+aggregate_lagged_values <- function(data) {
+  cities = c("Montreal", "Ottawa", "Toronto", "Calgary", "Vancouver")
+  result <- data %>%
+    group_by(Year, Month) %>%
+    summarize(across(all_of(cities), ~ round(mean(., na.rm = TRUE), 2)))
+  
+  result <- as.data.frame(result)  # Convert to data frame
+  
+  return(result)
+}
+```
+
+```{r}
+
+week1 <- create_lagg(index, 1)
+week2 <- create_lagg(index, 2)
+week3 <- create_lagg(index, 3)
+week4 <- create_lagg(index, 4)
+head(week2)
+
+
+Lagged_1week <- aggregate_lagged_values(week1)
+Lagged_2week <- aggregate_lagged_values(week2)
+Lagged_3week <- aggregate_lagged_values(week3)
+Lagged_4week <- aggregate_lagged_values(week4)
+print(Lagged_2week)
+```
+
+```{r}
+club_year_month <- function(data) {
+  # Convert Year and Month columns to numeric if they are stored as characters
+  data$Year <- as.numeric(data$Year)
+  data$Month <- as.numeric(data$Month)
+  
+  # Create a new Date column using the Year and Month values
+  data$Date <- as.Date(paste(data$Year, data$Month, "01", sep = "-"))
+  
+  # Move the Date column to the first position
+  data <- data[, c("Date", names(data)[-which(names(data) %in% c("Year", "Month"))])]
+  
+  # Remove the duplicate Date column
+  data <- data[, -which(names(data) == "Date.1")]
+  
+  return(data)
+}
+
+
+```
+
+```{r}
+club_year_month(Lagged_1week)
+```
+

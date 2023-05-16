@@ -1,0 +1,134 @@
+---
+title: "Creating lagged RT-LBCI values"
+subtitle: "Lagged by 1, 2, 3 and 4 weeks"
+author: "Vimaljeet Singh"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lubridate)
+rm(list = ls()) # clear objects in workspace each time I do 'Run all' using Ctrl+Alt+R
+```
+
+# Read the RT-LBCI file
+
+Extract year and month from the date and add it as a separate column because we will use them to group values together.
+
+```{r}
+index <- read.csv("data/RT-LBCI.csv")
+
+# Converting to date type
+index$Date <- as.Date(index$Date)
+
+# Extracting year and and month
+index$Year <- year(index$Date)
+index$Month <- month(index$Date)
+
+head(index)
+```
+
+# Create required functions
+
+* Function 1 creates lag in the input df by n intervals (in our case n = number of weeks we want to lag by)
+* Function 2 works on the output of the first function and aggregates the lagged values by calculating the mean value by grouping them by year then month  in 'cities' and rounds the mean values to 2 decimal places.
+* Function 3 creates a date column by clubbing the month and year columns and making the date to be the first day of that month and drops the year and month column in the input df (which is the output from function 2)
+
+```{r}
+# Function 1
+create_lag <- function(data, n) {
+  lagged_df <- data %>%
+    arrange(Year, Month) %>%
+    mutate(
+      across(-Date, ~lag(., n))
+    ) 
+  
+  lagged_df <- na.omit(lagged_df)
+  row.names(lagged_df) <- NULL
+  
+  lagged_df$Year <- year(lagged_df$Date)
+  lagged_df$Month <- month(lagged_df$Date)
+  
+  return(lagged_df)
+}
+
+# Function 2
+aggregate_lagged_values <- function(data) {
+  cities = c("Montreal", "Ottawa", "Toronto", "Calgary", "Vancouver")
+  result <- data %>%
+    group_by(Year, Month) %>%
+    summarize(across(all_of(cities), ~ round(mean(., na.rm = TRUE), 2)))
+  
+  result <- as.data.frame(result)  # Convert to data frame
+  
+  return(result)
+}
+
+# Function 3
+add_date <- function(data) {
+  # Convert Year and Month columns to numeric if they are stored as characters
+  data$Year <- as.numeric(data$Year)
+  data$Month <- as.numeric(data$Month)
+  
+  # Create a new Date column using the Year and Month values
+  data$Date <- as.Date(paste(data$Year, data$Month, "01", sep = "-"))
+  
+  # Move the Date column to the first position
+  data <- data[, c("Date", names(data)[-which(names(data) %in% c("Year", "Month"))])]
+  
+  # Remove the duplicate Date column
+  data <- data[, -which(names(data) == "Date.1")]
+  
+  return(data)
+}
+
+```
+
+# Creating lagged variable aggregated by year and month and it has first date of each month
+
+```{r warnings=F, message=F}
+
+week1 <- create_lag(index, 1)
+week2 <- create_lag(index, 2)
+week3 <- create_lag(index, 3)
+week4 <- create_lag(index, 4)
+
+# Lagged_1week <- aggregate_lagged_values(week1)
+# Lagged_2week <- aggregate_lagged_values(week2)
+# Lagged_3week <- aggregate_lagged_values(week3)
+# Lagged_4week <- aggregate_lagged_values(week4)
+
+Lagged_1week <- add_date(aggregate_lagged_values(week1))
+Lagged_2week <- add_date(aggregate_lagged_values(week2))
+Lagged_3week <- add_date(aggregate_lagged_values(week3))
+Lagged_4week <- add_date(aggregate_lagged_values(week4))
+```
+
+```{r}
+head(Lagged_1week)
+```
+
+```{r}
+head(Lagged_2week)
+```
+
+```{r}
+head(Lagged_3week)
+```
+
+```{r}
+head(Lagged_4week)
+```
+
+```{r}
+# Change the file path if you want to save the dataframes as csv in your machine
+# write.csv(Lagged_1week, "data/Lagged_1week.csv", row.names = FALSE)
+# write.csv(Lagged_2week, "data/Lagged_2week.csv", row.names = FALSE)
+# write.csv(Lagged_3week, "data/Lagged_3week.csv", row.names = FALSE)
+# write.csv(Lagged_4week, "data/Lagged_4week.csv", row.names = FALSE)
+```
+

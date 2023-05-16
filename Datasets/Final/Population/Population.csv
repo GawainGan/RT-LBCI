@@ -1,0 +1,32 @@
+﻿"Labour force characteristics, three-month moving average, unadjusted for seasonality, last 5 months (x 1,000) 1"
+"Frequency: Monthly"
+"Table: 14-10-0387-01"
+"Release date: 2023-05-05"
+"Geography: Canada, Province or territory, Economic region"
+""
+""
+
+"Labour force characteristics","Population 4",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Statistics","Estimate",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Geography 2 3","August 2020","September 2020","October 2020","November 2020","December 2020","January 2021","February 2021","March 2021","April 2021","May 2021","June 2021","July 2021","August 2021","September 2021","October 2021","November 2021","December 2021","January 2022","February 2022","March 2022","April 2022","May 2022","June 2022","July 2022","August 2022","September 2022","October 2022","November 2022","December 2022","January 2023","February 2023","March 2023","April 2023"
+,"Persons",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+"Halifax, Nova Scotia","373.3","374.0","374.8","375.4","375.9","376.4","376.8","377.3","377.7","378.2","378.8","379.4","380.3","381.3","382.4","383.4","384.4","385.5","386.7","387.8","388.9","390.1","391.3","392.6","394.1","395.7","397.2","398.4","399.4","400.4","401.5","402.9","404.2"
+"Montréal, Quebec","1,750.1","1,753.0","1,755.8","1,758.2","1,759.7","1,760.8","1,761.8","1,762.5","1,762.8","1,762.7","1,762.3","1,762.1","1,762.2","1,762.6","1,763.0","1,763.5","1,764.0","1,764.5","1,765.0","1,765.7","1,766.6","1,767.7","1,769.1","1,770.7","1,772.3","1,774.3","1,776.6","1,779.0","1,781.4","1,784.2","1,787.1","1,790.5","1,793.9"
+"Ottawa, Ontario","1,186.6","1,187.6","1,188.7","1,189.9","1,191.0","1,192.1","1,193.2","1,194.5","1,195.8","1,196.9","1,198.0","1,199.2","1,200.8","1,202.5","1,204.3","1,206.0","1,208.0","1,210.0","1,212.1","1,213.9","1,215.6","1,217.2","1,218.7","1,220.0","1,221.4","1,222.8","1,224.5","1,226.1","1,227.8","1,229.7","1,231.9","1,234.6","1,237.3"
+"Toronto, Ontario","5,763.2","5,770.2","5,776.8","5,783.5","5,788.7","5,793.0","5,797.5","5,802.2","5,807.4","5,811.4","5,815.0","5,819.3","5,825.3","5,832.2","5,839.4","5,846.5","5,855.0","5,863.8","5,873.3","5,881.8","5,889.6","5,896.7","5,903.5","5,910.2","5,917.3","5,924.7","5,933.9","5,943.0","5,952.7","5,963.9","5,976.9","5,992.9","6,009.4"
+"Calgary, Alberta","1,338.1","1,339.5","1,341.0","1,342.6","1,344.1","1,345.6","1,347.2","1,348.6","1,349.9","1,350.9","1,351.7","1,352.8","1,354.3","1,356.2","1,358.4","1,360.8","1,363.4","1,366.0","1,368.7","1,371.4","1,374.2","1,377.2","1,380.3","1,383.6","1,387.2","1,391.2","1,395.5","1,399.6","1,403.5","1,407.7","1,412.2","1,417.4","1,422.6"
+"Vancouver Island and Coast, British Columbia","736.3","737.0","737.6","738.3","739.0","739.7","740.4","741.1","742.0","743.0","744.2","745.6","747.3","749.1","751.0","752.8","754.4","755.8","757.1","758.4","759.6","760.7","761.8","762.8","763.8","764.7","765.6","766.3","766.9","767.6","768.7","770.2","771.9"
+
+
+
+
+Footnotes:
+1,"To ensure respondent confidentiality, estimates below a certain threshold are suppressed. For Canada, Quebec, Ontario, Alberta and British Columbia suppression is applied to all data below 1,500. The threshold level for Newfoundland and Labrador, Nova Scotia, New Brunswick, Manitoba and Saskatchewan is 500, while in Prince Edward Island, estimates under 200 are supressed. For census metropolitan areas (CMAs) and economic regions (ERs), use their respective provincial suppression levels mentioned above. Estimates are based on smaller sample sizes the more detailed the table becomes, which could result in lower data quality."
+2,"An economic region is a geographical unit generally composed of several census divisions within a province. While 73 regions are defined for the purposes of sampling, some areas are too small to enable production of independent estimates from the survey. These small regions are grouped with a neighbouring region with similar economic characteristics. In the case of Prince Edward Island, the province constitutes one economic region. For geographic descriptions of economic regions, refer to the Guide to the Labour Force Survey (catalogue number 71-543-GIE)."
+3,"Excluding the territories."
+4,"Number of persons of working age, 15 years and over. Estimates in thousands, rounded to the nearest hundred."
+
+
+
+"How to cite: Statistics Canada. Table 14-10-0387-01  Labour force characteristics, three-month moving average, unadjusted for seasonality, last 5 months"
+https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=1410038701
